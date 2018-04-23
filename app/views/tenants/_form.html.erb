@@ -1,0 +1,52 @@
+<%= form_with(model: tenant, local: true) do |form| %>
+  <% if tenant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tenant.errors.count, "error") %> prohibited this tenant from being saved:</h2>
+
+      <ul>
+      <% tenant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tenant_name %>
+    <%= form.text_field :tenant_name, id: :tenant_tenant_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :tenant_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :tenant_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_active %>
+    <%= form.check_box :is_active, id: :tenant_is_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted_at %>
+    <%= form.text_field :deleted_at, id: :tenant_deleted_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_id %>
+    <%= form.text_field :address_id, id: :tenant_address_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact_id %>
+    <%= form.text_field :contact_id, id: :tenant_contact_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

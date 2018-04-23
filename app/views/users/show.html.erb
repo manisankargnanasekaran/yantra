@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @user.user_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @user.is_active %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @user.deleted_at %>
+</p>
+
+<p>
+  <strong>Auth tocken:</strong>
+  <%= @user.auth_tocken %>
+</p>
+
+<p>
+  <strong>Password reset tocken:</strong>
+  <%= @user.password_reset_tocken %>
+</p>
+
+<p>
+  <strong>Password reset send at:</strong>
+  <%= @user.password_reset_send_at %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @user.contact %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @user.tenant %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

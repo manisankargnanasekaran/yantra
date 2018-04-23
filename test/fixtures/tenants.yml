@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tenant_name: MyString
+  email: MyString
+  password: MyString
+  is_active: false
+  deleted_at: MyString
+  address: one
+  contact: one
+
+two:
+  tenant_name: MyString
+  email: MyString
+  password: MyString
+  is_active: false
+  deleted_at: MyString
+  address: two
+  contact: two

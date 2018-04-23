@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tenants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tenant name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Is active</th>
+      <th>Deleted at</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tenants.each do |tenant| %>
+      <tr>
+        <td><%= tenant.tenant_name %></td>
+        <td><%= tenant.email %></td>
+        <td><%= tenant.password %></td>
+        <td><%= tenant.is_active %></td>
+        <td><%= tenant.deleted_at %></td>
+        <td><%= tenant.address %></td>
+        <td><%= tenant.contact %></td>
+        <td><%= link_to 'Show', tenant %></td>
+        <td><%= link_to 'Edit', edit_tenant_path(tenant) %></td>
+        <td><%= link_to 'Destroy', tenant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tenant', new_tenant_path %>

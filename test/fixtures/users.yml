@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  user_name: MyString
+  email: MyString
+  password: MyString
+  is_active: false
+  deleted_at: MyString
+  auth_tocken: MyString
+  password_reset_tocken: MyString
+  password_reset_send_at: 2018-04-23 12:01:07
+  address: one
+  contact: one
+  tenant: one
+
+two:
+  first_name: MyString
+  last_name: MyString
+  user_name: MyString
+  email: MyString
+  password: MyString
+  is_active: false
+  deleted_at: MyString
+  auth_tocken: MyString
+  password_reset_tocken: MyString
+  password_reset_send_at: 2018-04-23 12:01:07
+  address: two
+  contact: two
+  tenant: two

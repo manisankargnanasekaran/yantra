@@ -1,0 +1,82 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :user_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :user_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name, id: :user_user_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :user_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_active %>
+    <%= form.check_box :is_active, id: :user_is_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted_at %>
+    <%= form.text_field :deleted_at, id: :user_deleted_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auth_tocken %>
+    <%= form.text_field :auth_tocken, id: :user_auth_tocken %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_reset_tocken %>
+    <%= form.text_field :password_reset_tocken, id: :user_password_reset_tocken %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_reset_send_at %>
+    <%= form.datetime_select :password_reset_send_at, id: :user_password_reset_send_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_id %>
+    <%= form.text_field :address_id, id: :user_address_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact_id %>
+    <%= form.text_field :contact_id, id: :user_contact_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tenant_id %>
+    <%= form.text_field :tenant_id, id: :user_tenant_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
