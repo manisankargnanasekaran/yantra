@@ -1,16 +1,14 @@
 module Api
   module V1 
 	class ApplicationController < ActionController::Base
-	  #protect_from_forgery with: :exception
-	  #def current_user
-  		#@current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
-      #end
-
+	  
       before_action :check_session
       helper_method :current_user
 
   def check_session
-  	redirect_to login_path unless current_user
+  	unless current_user
+      render json: { error: 'Not Authorized' }, status: 401 unless @current_user
+    end
   end
   private
   def current_user

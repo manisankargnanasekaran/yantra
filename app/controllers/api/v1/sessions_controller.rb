@@ -5,14 +5,18 @@ module Api
 	  def login_attempt
         authorized_user = User.authenticate(params)
         if authorized_user == true
-          session[:user_id] = "altius"
       	  render json: true
-        elsif authorized_user.email.present?
+        elsif authorized_user == false
+          render json: false
+        else
           session[:user_id] = authorized_user.id
           render json: authorized_user
-        else
-          render json: false
         end
+      end
+
+      def delete
+        session[:user_id] = nil
+        render json: {message: "Your session was deleted"}
       end
 	end
   end

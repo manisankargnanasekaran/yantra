@@ -42,10 +42,12 @@ ActiveRecord::Schema.define(version: 20180423063107) do
     t.string "deleted_at"
     t.integer "address_id"
     t.integer "contact_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_tenants_on_address_id"
     t.index ["contact_id"], name: "index_tenants_on_contact_id"
+    t.index ["user_id"], name: "index_tenants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,12 +63,10 @@ ActiveRecord::Schema.define(version: 20180423063107) do
     t.datetime "password_reset_send_at"
     t.integer "address_id"
     t.integer "contact_id"
-    t.integer "tenant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["contact_id"], name: "index_users_on_contact_id"
-    t.index ["tenant_id"], name: "index_users_on_tenant_id"
   end
 
 end

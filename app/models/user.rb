@@ -1,14 +1,13 @@
 class User < ApplicationRecord
   belongs_to :address
   belongs_to :contact
-  belongs_to :tenant
-
+ 
 
    def self.authenticate(params)
     email = params[:email]
     password = params[:password]
-    user = find_by_email(email)
-    if user && user.password == password && user.is_active == false
+    user = User.find_by_email(email)
+    if user && user.password == password && user.is_active == nil
       user.update(auth_tocken: SecureRandom.urlsafe_base64)
       if params[:player_id].present?
         player_id = params[:player_id]
@@ -21,6 +20,8 @@ class User < ApplicationRecord
       end
     elsif email == "altius" || "Altius" && password == "altius"
       true
+    else
+      false
     end
 
    end 

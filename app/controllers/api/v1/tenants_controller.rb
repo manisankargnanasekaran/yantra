@@ -26,7 +26,6 @@ module Api
       # POST /tenants
       # POST /tenants.json
       def create
-        byebug
         @tenant = Tenant.new(tenant_params)
 
         respond_to do |format|

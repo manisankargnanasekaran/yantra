@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
   	namespace :v1 do
          post 'login' => 'sessions#login_attempt'
+          get 'logout' => 'sessions#delete'
 
 		  resources :users
 		  resources :tenants

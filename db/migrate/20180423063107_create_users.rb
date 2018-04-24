@@ -13,8 +13,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :password_reset_send_at
       t.references :address, foreign_key: true
       t.references :contact, foreign_key: true
-      t.references :tenant, foreign_key: true
-
+      
       t.timestamps
     end
   end
